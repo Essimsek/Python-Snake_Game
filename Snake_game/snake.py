@@ -24,7 +24,6 @@ class Snake:
 		position = self.segments[-1].pos()
 		self.add_tail(position)
 
-	# it takes 2 argument first one is food object and second is score object
 	def move(self):
 		for segment_num in range(len(self.segments) - 1, 0, -1):
 			new_x = self.segments[segment_num - 1].xcor()
