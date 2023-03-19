@@ -22,6 +22,7 @@ screen.onkey(key="Up", fun=snake.up)
 screen.onkey(key="Down", fun=snake.down)
 screen.onkey(key="Right", fun=snake.right)
 screen.onkey(key="Left", fun=snake.left)
+screen.onkey(key="Escape", fun=screen.bye)
 
 while True:
 
