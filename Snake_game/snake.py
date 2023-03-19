@@ -35,15 +35,23 @@ class Snake:
 		x_cor = self.segments[0].xcor()
 		y_cor = self.segments[0].ycor()
 		if (x_cor > 285 or x_cor < -285) or (y_cor > 285 or y_cor < -285):
-			return False
-		return True
+			return True
+		return False
 
 	def check_tail_collision(self):
 		for i in range(1, len(self.segments)):
 			if self.segments[0].pos() == self.segments[i].pos():
 				print("Collision with tail")
-				return False
-		return True
+				return True
+		return False
+
+	def reset_snake(self):
+		for segment in self.segments:
+			segment.clear()
+			segment.hideturtle()
+			del segment
+		self.segments.clear()
+		self.create_snakes()
 
 	# set the snake's direction
 	def up(self):
