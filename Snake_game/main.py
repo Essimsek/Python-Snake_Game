@@ -23,20 +23,21 @@ screen.onkey(key="Down", fun=snake.down)
 screen.onkey(key="Right", fun=snake.right)
 screen.onkey(key="Left", fun=snake.left)
 
-while snake.check_collision() and snake.check_tail_collision():
+while True:
 
 	screen.update()
 	time.sleep(0.1)
 	snake.move()
 
 	if snake.segments[0].distance(food) < 15:
+		score.update_score()
 		score.write_score()
 		snake.extend()
 		food.generate_new_food()
 
-score.game_over()
+	if snake.check_collision() or snake.check_tail_collision():
+		score.reset_scoreboard()
+		snake.reset_snake()
 
-
-screen.listen()
 screen.exitonclick()
 
