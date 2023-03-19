@@ -45,6 +45,7 @@ class Snake:
 				return True
 		return False
 
+	#  delete all the turtle objects and recreate
 	def reset_snake(self):
 		for segment in self.segments:
 			segment.clear()
